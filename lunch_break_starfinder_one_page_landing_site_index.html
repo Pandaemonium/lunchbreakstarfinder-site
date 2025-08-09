@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lunch Break Starfinder — Deep Space Nine‑Nine in 60 Minutes</title>
+  <meta name="description" content="Weekly, one‑hour, drop‑in Starfinder scenarios set on Absalom Station. Buzzers at 12:55. Free, fast, and funny — ‘Deep Space Nine‑Nine.’"/>
+  <meta property="og:title" content="Lunch Break Starfinder" />
+  <meta property="og:description" content="Weekly, one‑hour Starfinder adventures on Absalom Station. Play at lunch; finish in 60 minutes, flat." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lunchbreakstarfinder.com" />
+  <style>
+    :root{
+      --bg:#0b0f1a;--fg:#f5f7ff;--muted:#aab3d0;--accent:#8ad8ff;--accent2:#b48bff;--card:#121829;--edge:#1b2340;--good:#80eec0;--warn:#ffd166;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:
+      radial-gradient(1200px 800px at 20% -10%, rgba(138,216,255,.15), transparent),
+      radial-gradient(900px 700px at 110% 10%, rgba(180,139,255,.2), transparent),
+      linear-gradient(180deg, #0b0f1a 0%, #0b0f1a 60%, #0a0f20 100%);
+      color:var(--fg);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:rgba(11,15,26,.7);border-bottom:1px solid #1a1f33;z-index:20}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;box-shadow:0 2px 18px rgba(138,216,255,.25)}
+    .brand .logo svg{width:22px;height:22px;fill:#0b0f1a}
+    .brand h1{font-size:18px;margin:0 0 2px 0;letter-spacing:.3px}
+    .nav a{margin-left:14px;color:var(--fg);opacity:.9}
+    .btn{display:inline-block; padding:10px 16px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#081021;font-weight:700;border:0;box-shadow:0 6px 24px rgba(138,216,255,.22);transition:transform .06s ease}
+    .btn:hover{transform:translateY(-1px);text-decoration:none}
+    .hero{padding:72px 0 36px}
+    .hero h2{font-size:42px;line-height:1.1;margin:10px 0 14px}
+    .hero p{color:var(--muted);max-width:720px}
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:960px){.grid.cols-3{grid-template-columns:1fr 1fr}.hero h2{font-size:34px}}
+    @media (max-width:680px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}.hero{padding:54px 0 24px}}
+    .card{background:linear-gradient(180deg, var(--card), #0d1426);border:1px solid var(--edge);border-radius:18px;padding:18px;box-shadow:0 10px 32px rgba(5,10,30,.25)}
+    .card h3{margin:6px 0 6px;font-size:18px}
+    .mini{font-size:13px;color:var(--muted)}
+    .list{margin:10px 0 0 0;padding:0}
+    .list li{list-style:none;margin:8px 0;padding-left:26px;position:relative}
+    .list li:before{content:"";position:absolute;left:0;top:9px;width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+    section{padding:36px 0}
+    .pill{display:inline-block;font-size:12px;color:#0e1530;background:linear-gradient(135deg,var(--good),#b7ffde);border-radius:999px;padding:6px 10px;font-weight:700;margin-right:8px}
+    .kicker{letter-spacing:.4px;text-transform:uppercase;font-size:12px;color:var(--accent);font-weight:700}
+    .recipe{display:grid;grid-template-columns:110px 1fr;gap:10px;align-items:start}
+    .recipe .t{font-weight:700;color:var(--accent)}
+    .footer{border-top:1px solid #1a1f33;color:var(--muted);font-size:13px}
+    .tag{display:inline-block;border:1px solid #2a3255;padding:4px 8px;border-radius:10px;margin:4px 6px 0 0;color:#cdd6ff;background:rgba(18,24,41,.6)}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;background:#0b1226;color:#d2dcff;border:1px solid #243055;border-radius:8px;padding:2px 6px}
+    .notice{background:linear-gradient(180deg,#1b2340,#131a31);border:1px dashed #2a3255;border-radius:16px;padding:12px;color:#cfd8ff}
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- simple badge icon -->
+          <svg viewBox="0 0 24 24" role="img" aria-label="Badge icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.88L18.18 22 12 18.77 5.82 22 7 14.15l-5-4.88 6.91-1.01L12 2z"/></svg>
+        </div>
+        <div>
+          <h1>Lunch Break Starfinder</h1>
+          <div class="mini">Deep Space Nine‑Nine. One hour. Every week.</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#what">What</a>
+        <a href="#how">How</a>
+        <a href="#cast">Cast</a>
+        <a href="#scenarios">Scenarios</a>
+        <a href="#badges">Badges</a>
+        <a class="btn" href="#signup">Get Updates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <span class="pill">Free & Drop‑In Friendly</span>
+      <h2>Play a complete Starfinder episode on your lunch break.</h2>
+      <p>
+        Bite‑sized, one‑hour adventures on Absalom Station with a lovably dysfunctional precinct. Every scenario is self‑contained and ends cleanly with a built‑in <strong>12:55 Buzzer</strong>. Bring new players, swap characters, and always land the plane.
+      </p>
+      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="#signup">Get the weekly drop</a>
+        <a class="btn" style="background:linear-gradient(135deg,var(--accent2),var(--accent))" href="#pilot">Download the pilot</a>
+      </div>
+    </section>
+
+    <section id="what">
+      <div class="container grid cols-3">
+        <div class="card">
+          <h3>What is it?</h3>
+          <p class="mini">Think <em>Brooklyn Nine‑Nine</em> meets <em>Deep Space Nine</em>.</p>
+          <ul class="list">
+            <li>Weekly, self‑contained Starfinder one‑shots.</li>
+            <li>Designed for exactly 60 minutes of table time.</li>
+            <li>New‑player friendly; pre‑gens included.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What makes it unique?</h3>
+          <ul class="list">
+            <li><strong>Buzzers</strong> that resolve any scene on time.</li>
+            <li><strong>Badges</strong> that reward how you solved it.</li>
+            <li>Recurring cast you’ll love to love (or roast).</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Compatibility</h3>
+          <p class="mini">Fully compatible with the Starfinder Roleplaying Game (2E). Not affiliated with Paizo.</p>
+          <div class="notice">Add your chosen license / compatibility statement here.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="container">
+        <div class="kicker">How it runs in 60</div>
+        <h2 style="margin:6px 0 14px">The Lunch Break Recipe</h2>
+        <div class="card">
+          <div class="recipe">
+            <div class="t">0–5</div>
+            <div>Cold open, Dispatch ping, assign roles. Hand out <span class="kbd">Spotlight</span> tokens.</div>
+            <div class="t">5–20</div>
+            <div>Scene A: investigation/setup. 2 checks + 1 hazard or social beat.</div>
+            <div class="t">20–35</div>
+            <div>Scene B: chase/puzzle/social duel. Start a 4‑segment clock.</div>
+            <div class="t">35–50</div>
+            <div>Climax: 3‑round combat or contested skill challenge.</div>
+            <div class="t">50–55</div>
+            <div>Resolution: consequences, twist, one Badge.</div>
+            <div class="t">55–60</div>
+            <div><strong>Buzzer</strong>: soft/medium/hard wrap to land on time.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cast">
+      <div class="container">
+        <div class="kicker">Meet the precinct</div>
+        <h2 style="margin:6px 0 14px">Recurring Characters</h2>
+        <div class="grid cols-3">
+          <div class="card"><h3>Chief Jute Farrow</h3><p class="mini">Morale first, competence later. Invented “merit‑based requisition.”</p></div>
+          <div class="card"><h3>Lt. Violet‑9</h3><p class="mini">Android, by‑the‑books. Runs the show. Loves candy.</p></div>
+          <div class="card"><h3>Garth Varkly</h3><p class="mini">Smug gunslinger. “The blue and the goo.” Cyclops Helm once‑per‑day nat 20.</p></div>
+          <div class="card"><h3>Larow Senesez</h3><p class="mini">Undead mystic fixer. Good‑cop grin, graveyard ethics.</p></div>
+          <div class="card"><h3>“Radio” Twillich</h3><p class="mini">Your ever‑present handler. Clues, cams, and custom kit.</p></div>
+          <div class="card"><h3>Mother Lana Beeper</h3><p class="mini">Chaplain to all faiths… and her bottle. Finds a scripture for every sin.</p></div>
+        </div>
+        <p class="mini" style="margin-top:8px">Plus: HR Valdorun, Vanora “the Codger,” the Merchant, the Doc, the Bartender, and more.</p>
+      </div>
+    </section>
+
+    <section id="scenarios">
+      <div class="container">
+        <div class="kicker">Episode seeds</div>
+        <h2 style="margin:6px 0 14px">Play during lunch. Laugh all week.</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Security Bot on the Fritz</h3>
+            <p class="mini">A runaway maintenance unit pens civilians by the substation. Is it a glitch… or a test?</p>
+            <div class="tag">Chase</div><div class="tag">Hazard</div><div class="tag">Buzzers x3</div>
+          </div>
+          <div class="card">
+            <h3>Lazy Lizard Bar Fight</h3>
+            <p class="mini">The bets aren’t on winners—they’re on <em>first limb severed</em>. De‑incentivize the carnage.</p>
+            <div class="tag">Social Duel</div><div class="tag">Crowd Clock</div>
+          </div>
+          <div class="card">
+            <h3>Suspicious Grenade Purchase</h3>
+            <p class="mini">Follow the serials from the Merchant to a stash—or tail the buyer to a bigger fish.</p>
+            <div class="tag">Investigation</div><div class="tag">Warehouse Minions</div>
+          </div>
+          <div class="card">
+            <h3>Parade Security</h3>
+            <p class="mini">Diplomats, fireworks, and a rival squad with itchy trigger fingers.</p>
+            <div class="tag">Escort</div><div class="tag">Public Heat</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="badges">
+      <div class="container">
+        <div class="kicker">Make choices that matter</div>
+        <h2 style="margin:6px 0 14px">Badges</h2>
+        <div class="grid cols-3">
+          <div class="card"><h3>Professionalism</h3><p class="mini">Reduce collateral; stabilize civilians once/episode.</p></div>
+          <div class="card"><h3>Community Trust</h3><p class="mini">Bonus on your first local social test.</p></div>
+          <div class="card"><h3>Ingenuity</h3><p class="mini">One free flashback without a Spotlight token.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="signup">
+      <div class="container">
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Get the weekly drop</h3>
+            <p class="mini">New scenarios, pre‑gens, and printable clocks—straight to your inbox.</p>
+            <form onsubmit="event.preventDefault(); alert('Hook this form to your Squarespace Form Block or a service like Formspree.');" aria-label="Email signup" style="display:flex;gap:8px;flex-wrap:wrap">
+              <input required type="email" placeholder="you@station.net" aria-label="Email" style="flex:1;min-width:220px;padding:10px 12px;border-radius:12px;border:1px solid #2a3255;background:#0d1426;color:#fff" />
+              <button class="btn" type="submit">Subscribe</button>
+            </form>
+            <p class="mini" style="margin-top:8px">We’ll never share your info. Unsubscribe anytime.</p>
+          </div>
+          <div class="notice">
+            <strong>Tip for Squarespace:</strong> Replace this form with a <em>Form</em> block (Storage → Email/Drive/Mailchimp). Use this page as a visual reference and copy‑paste the text.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pilot">
+      <div class="container center">
+        <div class="card">
+          <h3>Pilot Episode: Security Bot on the Fritz</h3>
+          <p class="mini">Two pages: clocks, DCs, three Buzzers, trimmed stat blocks. (Add your PDF link here.)</p>
+          <a href="#" class="btn">Download (PDF)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="padding:20px 24px">
+      <div>© <span id="y"></span> Lunch Break Starfinder. Fan content; not affiliated with Paizo Inc. Starfinder® is a trademark of Paizo Inc., used under applicable policies. Replace this line with your official license statement.</div>
+    </div>
+  </footer>
+
+  <script>
+    // small nicety: update year & smooth scroll
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{ const id=a.getAttribute('href').slice(1); const el=document.getElementById(id); if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }});
+    });
+  </script>
+</body>
+</html>
